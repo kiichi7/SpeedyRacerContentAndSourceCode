@@ -1,0 +1,898 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{FC572A35-2108-463F-9A58-8EFDF2A6864B}</ProjectGuid>
+    <ProjectTypeGuids>{9F340DF3-2AED-4330-AC16-78AC2D9B4738};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SpeedyRacer</RootNamespace>
+    <AssemblyName>SpeedyRacer</AssemblyName>
+    <XnaFrameworkVersion>v1.0</XnaFrameworkVersion>
+    <XnaPlatform>Windows</XnaPlatform>
+    <ApplicationIcon>SpeedyRacer.ico</ApplicationIcon>
+    <XNAGlobalContentPipelineAssemblies>Microsoft.Xna.Framework.Content.Pipeline.EffectImporter.dll;Microsoft.Xna.Framework.Content.Pipeline.FBXImporter.dll;Microsoft.Xna.Framework.Content.Pipeline.TextureImporter.dll;Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</XNAGlobalContentPipelineAssemblies>
+    <XNAProjectContentPipelineAssemblies>$(ProjectDir)..\XnaGraphicEngineContentProcessors\bin\Release\XnaGraphicEngineContentProcessors.dll</XNAProjectContentPipelineAssemblies>
+    <StartupObject>SpeedyRacer.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoStdLib>true</NoStdLib>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoStdLib>true</NoStdLib>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Xna.Framework">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Xna.Framework.Game">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="mscorlib">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.XML" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="GameLogic\Replay.cs">
+      <XNAUseContentPipeline>false</XNAUseContentPipeline>
+      <Name>Replay</Name>
+    </Compile>
+    <Compile Include="GameScreens\Credits.cs">
+      <XNAUseContentPipeline>false</XNAUseContentPipeline>
+      <Name>Credits</Name>
+    </Compile>
+    <Compile Include="GameScreens\GameScreen.cs">
+      <XNAUseContentPipeline>false</XNAUseContentPipeline>
+      <Name>GameScreen</Name>
+    </Compile>
+    <Compile Include="GameScreens\Help.cs">
+      <XNAUseContentPipeline>false</XNAUseContentPipeline>
+      <Name>Help</Name>
+    </Compile>
+    <Compile Include="GameScreens\Highscores.cs">
+      <XNAUseContentPipeline>false</XNAUseContentPipeline>
+      <Name>Highscores</Name>
+    </Compile>
+    <Compile Include="GameScreens\IGameScreen.cs">
+      <XNAUseContentPipeline>false</XNAUseContentPipeline>
+      <Name>IGameScreen</Name>
+    </Compile>
+    <Compile Include="GameScreens\MainMenu.cs">
+      <XNAUseContentPipeline>false</XNAUseContentPipeline>
+      <Name>MainMenu</Name>
+    </Compile>
+    <Compile Include="GameScreens\Options.cs">
+      <XNAUseContentPipeline>false</XNAUseContentPipeline>
+      <Name>Options</Name>
+    </Compile>
+    <Compile Include="GameLogic\BasePlayer.cs">
+      <XNAUseContentPipeline>false</XNAUseContentPipeline>
+      <Name>BasePlayer</Name>
+    </Compile>
+    <Compile Include="GameLogic\CarPhysics.cs">
+      <XNAUseContentPipeline>false</XNAUseContentPipeline>
+      <Name>CarPhysics</Name>
+    </Compile>
+    <Compile Include="GameLogic\ChaseCamera.cs">
+      <XNAUseContentPipeline>false</XNAUseContentPipeline>
+      <Name>ChaseCamera</Name>
+    </Compile>
+    <Compile Include="GameLogic\Input.cs">
+      <XNAUseContentPipeline>false</XNAUseContentPipeline>
+      <Name>Input</Name>
+    </Compile>
+    <Compile Include="GameLogic\Physics\SpringPhysicsObject.cs">
+      <XNAUseContentPipeline>false</XNAUseContentPipeline>
+      <Name>SpringPhysicsObject</Name>
+    </Compile>
+    <Compile Include="GameLogic\Player.cs">
+      <XNAUseContentPipeline>false</XNAUseContentPipeline>
+      <Name>Player</Name>
+    </Compile>
+    <Compile Include="GameLogic\ScreenshotCapturer.cs">
+      <XNAUseContentPipeline>false</XNAUseContentPipeline>
+      <Name>ScreenshotCapturer</Name>
+    </Compile>
+    <Compile Include="Graphics\BaseGame.cs">
+      <XNAUseContentPipeline>false</XNAUseContentPipeline>
+      <Name>BaseGame</Name>
+    </Compile>
+    <Compile Include="Graphics\LensFlare.cs">
+      <XNAUseContentPipeline>false</XNAUseContentPipeline>
+      <Name>LensFlare</Name>
+    </Compile>
+    <Compile Include="Graphics\LineManager2D.cs">
+      <XNAUseContentPipeline>false</XNAUseContentPipeline>
+      <Name>LineManager2D</Name>
+    </Compile>
+    <Compile Include="Graphics\LineManager3D.cs">
+      <XNAUseContentPipeline>false</XNAUseContentPipeline>
+      <Name>LineManager3D</Name>
+    </Compile>
+    <Compile Include="Graphics\Material.cs">
+      <XNAUseContentPipeline>false</XNAUseContentPipeline>
+      <Name>Material</Name>
+    </Compile>
+    <Compile Include="Graphics\MeshRenderManager.cs">
+      <XNAUseContentPipeline>false</XNAUseContentPipeline>
+      <Name>MeshRenderManager</Name>
+    </Compile>
+    <Compile Include="Graphics\Model.cs">
+      <XNAUseContentPipeline>false</XNAUseContentPipeline>
+      <Name>Model</Name>
+    </Compile>
+    <Compile Include="Graphics\PlaneRenderer.cs">
+      <XNAUseContentPipeline>false</XNAUseContentPipeline>
+      <Name>PlaneRenderer</Name>
+    </Compile>
+    <Compile Include="Graphics\SpriteHelper.cs">
+      <XNAUseContentPipeline>false</XNAUseContentPipeline>
+      <Name>SpriteHelper</Name>
+    </Compile>
+    <Compile Include="Graphics\TangentVertex.cs">
+      <XNAUseContentPipeline>false</XNAUseContentPipeline>
+      <Name>TangentVertex</Name>
+    </Compile>
+    <Compile Include="Graphics\TestGame.cs">
+      <XNAUseContentPipeline>false</XNAUseContentPipeline>
+      <Name>TestGame</Name>
+    </Compile>
+    <Compile Include="Graphics\Texture.cs">
+      <XNAUseContentPipeline>false</XNAUseContentPipeline>
+      <Name>Texture</Name>
+    </Compile>
+    <Compile Include="Graphics\TextureFont.cs">
+      <XNAUseContentPipeline>false</XNAUseContentPipeline>
+      <Name>TextureFont</Name>
+    </Compile>
+    <Compile Include="Graphics\TextureFontBigNumbers.cs">
+      <XNAUseContentPipeline>false</XNAUseContentPipeline>
+      <Name>TextureFontBigNumbers</Name>
+    </Compile>
+    <Compile Include="Graphics\UIRenderer.cs">
+      <XNAUseContentPipeline>false</XNAUseContentPipeline>
+      <Name>UIRenderer</Name>
+    </Compile>
+    <Compile Include="Helpers\ColorHelper.cs">
+      <XNAUseContentPipeline>false</XNAUseContentPipeline>
+      <Name>ColorHelper</Name>
+    </Compile>
+    <Compile Include="Helpers\Directories.cs">
+      <XNAUseContentPipeline>false</XNAUseContentPipeline>
+      <Name>Directories</Name>
+    </Compile>
+    <Compile Include="Helpers\FileHelper.cs">
+      <XNAUseContentPipeline>false</XNAUseContentPipeline>
+      <Name>FileHelper</Name>
+    </Compile>
+    <Compile Include="Helpers\Log.cs">
+      <XNAUseContentPipeline>false</XNAUseContentPipeline>
+      <Name>Log</Name>
+    </Compile>
+    <Compile Include="Helpers\RandomHelper.cs">
+      <XNAUseContentPipeline>false</XNAUseContentPipeline>
+      <Name>RandomHelper</Name>
+    </Compile>
+    <Compile Include="Helpers\StringHelper.cs">
+      <XNAUseContentPipeline>false</XNAUseContentPipeline>
+      <Name>StringHelper</Name>
+    </Compile>
+    <Compile Include="Helpers\Vector3Helper.cs">
+      <XNAUseContentPipeline>false</XNAUseContentPipeline>
+      <Name>Vector3Helper</Name>
+    </Compile>
+    <Compile Include="Helpers\WindowsHelper.cs">
+      <XNAUseContentPipeline>false</XNAUseContentPipeline>
+      <Name>WindowsHelper</Name>
+    </Compile>
+    <Compile Include="Helpers\XmlHelper.cs">
+      <XNAUseContentPipeline>false</XNAUseContentPipeline>
+      <Name>XmlHelper</Name>
+    </Compile>
+    <Compile Include="Landscapes\Landscape.cs">
+      <XNAUseContentPipeline>false</XNAUseContentPipeline>
+      <Name>Landscape</Name>
+    </Compile>
+    <Compile Include="Program.cs">
+      <XNAUseContentPipeline>false</XNAUseContentPipeline>
+      <Name>Program</Name>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <XNAUseContentPipeline>false</XNAUseContentPipeline>
+      <Name>AssemblyInfo</Name>
+    </Compile>
+    <Compile Include="Properties\GameSettings.cs">
+      <XNAUseContentPipeline>false</XNAUseContentPipeline>
+      <Name>GameSettings</Name>
+    </Compile>
+    <Compile Include="Shaders\PostScreenGlow.cs">
+      <XNAUseContentPipeline>false</XNAUseContentPipeline>
+      <Name>PostScreenGlow</Name>
+    </Compile>
+    <Compile Include="Shaders\PostScreenMenu.cs">
+      <XNAUseContentPipeline>false</XNAUseContentPipeline>
+      <Name>PostScreenMenu</Name>
+    </Compile>
+    <Compile Include="Shaders\PreScreenSkyCubeMapping.cs">
+      <XNAUseContentPipeline>false</XNAUseContentPipeline>
+      <Name>PreScreenSkyCubeMapping</Name>
+    </Compile>
+    <Compile Include="Shaders\RenderToTexture.cs">
+      <XNAUseContentPipeline>false</XNAUseContentPipeline>
+      <Name>RenderToTexture</Name>
+    </Compile>
+    <Compile Include="Shaders\ShaderEffect.cs">
+      <XNAUseContentPipeline>false</XNAUseContentPipeline>
+      <Name>ShaderEffect</Name>
+    </Compile>
+    <Compile Include="Shaders\ShadowMapBlur.cs">
+      <XNAUseContentPipeline>false</XNAUseContentPipeline>
+      <Name>ShadowMapBlur</Name>
+    </Compile>
+    <Compile Include="Shaders\ShadowMapShader.cs">
+      <XNAUseContentPipeline>false</XNAUseContentPipeline>
+      <Name>ShadowMapShader</Name>
+    </Compile>
+    <Compile Include="Shaders\VBScreenHelper.cs">
+      <XNAUseContentPipeline>false</XNAUseContentPipeline>
+      <Name>VBScreenHelper</Name>
+    </Compile>
+    <Compile Include="Sounds\Sound.cs">
+      <XNAUseContentPipeline>false</XNAUseContentPipeline>
+      <Name>Sound</Name>
+    </Compile>
+    <Compile Include="SpeedyRacerManager.cs">
+      <XNAUseContentPipeline>false</XNAUseContentPipeline>
+      <Name>SpeedyRacerManager</Name>
+    </Compile>
+    <Compile Include="Tracks\GuardRail.cs">
+      <XNAUseContentPipeline>false</XNAUseContentPipeline>
+      <Name>GuardRail</Name>
+    </Compile>
+    <Compile Include="Tracks\Track.cs">
+      <XNAUseContentPipeline>false</XNAUseContentPipeline>
+      <Name>Track</Name>
+    </Compile>
+    <Compile Include="Tracks\TrackColumns.cs">
+      <XNAUseContentPipeline>false</XNAUseContentPipeline>
+      <Name>TrackColumns</Name>
+    </Compile>
+    <Compile Include="Tracks\TrackCombiModels.cs">
+      <XNAUseContentPipeline>false</XNAUseContentPipeline>
+      <Name>TrackCombiModels</Name>
+    </Compile>
+    <Compile Include="Tracks\TrackData.cs">
+      <XNAUseContentPipeline>false</XNAUseContentPipeline>
+      <Name>TrackData</Name>
+    </Compile>
+    <Compile Include="Tracks\TrackLine.cs">
+      <XNAUseContentPipeline>false</XNAUseContentPipeline>
+      <Name>TrackLine</Name>
+    </Compile>
+    <Compile Include="Tracks\TrackVertex.cs">
+      <XNAUseContentPipeline>false</XNAUseContentPipeline>
+      <Name>TrackVertex</Name>
+    </Compile>
+    <Compile Include="UnitTests.cs">
+      <XNAUseContentPipeline>false</XNAUseContentPipeline>
+      <Name>UnitTests</Name>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\background.png">
+      <XNAUseContentPipeline>true</XNAUseContentPipeline>
+      <Importer>TextureImporter</Importer>
+      <Processor>SpriteTextureProcessor</Processor>
+      <Name>background</Name>
+    </Content>
+    <Content Include="Content\buttons.png">
+      <XNAUseContentPipeline>true</XNAUseContentPipeline>
+      <Importer>TextureImporter</Importer>
+      <Processor>SpriteTextureProcessor</Processor>
+      <Name>buttons</Name>
+    </Content>
+    <Content Include="Content\ColorSelection.png">
+      <XNAUseContentPipeline>true</XNAUseContentPipeline>
+      <Importer>TextureImporter</Importer>
+      <Processor>SpriteTextureProcessor</Processor>
+      <Name>ColorSelection</Name>
+    </Content>
+    <Content Include="Content\CreditsScreen.png">
+      <XNAUseContentPipeline>true</XNAUseContentPipeline>
+      <Importer>TextureImporter</Importer>
+      <Processor>SpriteTextureProcessor</Processor>
+      <Name>CreditsScreen</Name>
+    </Content>
+    <Content Include="Content\GameFont.png">
+      <XNAUseContentPipeline>true</XNAUseContentPipeline>
+      <Importer>TextureImporter</Importer>
+      <Processor>SpriteTextureProcessor</Processor>
+      <Name>GameFont</Name>
+    </Content>
+    <Content Include="Content\HelpScreen.png">
+      <XNAUseContentPipeline>true</XNAUseContentPipeline>
+      <Importer>TextureImporter</Importer>
+      <Processor>SpriteTextureProcessor</Processor>
+      <Name>HelpScreen</Name>
+    </Content>
+    <Content Include="Content\ingame.png">
+      <XNAUseContentPipeline>true</XNAUseContentPipeline>
+      <Importer>TextureImporter</Importer>
+      <Processor>SpriteTextureProcessor</Processor>
+      <Name>ingame</Name>
+    </Content>
+    <Content Include="Content\CombiBuildings.CombiModel">
+      <XNAUseContentPipeline>false</XNAUseContentPipeline>
+      <Name>CombiBuildings</Name>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\CombiOilTanks.CombiModel">
+      <XNAUseContentPipeline>false</XNAUseContentPipeline>
+      <Name>CombiOilTanks</Name>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\CombiPalms.CombiModel">
+      <XNAUseContentPipeline>false</XNAUseContentPipeline>
+      <Name>CombiPalms</Name>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\CombiPalms2.CombiModel">
+      <XNAUseContentPipeline>false</XNAUseContentPipeline>
+      <Name>CombiPalms2</Name>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\CombiRuins.CombiModel">
+      <XNAUseContentPipeline>false</XNAUseContentPipeline>
+      <Name>CombiRuins</Name>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\CombiStones.CombiModel">
+      <XNAUseContentPipeline>false</XNAUseContentPipeline>
+      <Name>CombiStones</Name>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\logos.png">
+      <XNAUseContentPipeline>true</XNAUseContentPipeline>
+      <Importer>TextureImporter</Importer>
+      <Processor>SpriteTextureProcessor</Processor>
+      <Name>logos</Name>
+    </Content>
+    <Content Include="Content\MouseCursor.png">
+      <XNAUseContentPipeline>true</XNAUseContentPipeline>
+      <Importer>TextureImporter</Importer>
+      <Processor>SpriteTextureProcessor</Processor>
+      <Name>MouseCursor</Name>
+    </Content>
+    <Content Include="Content\OptionsScreen.png">
+      <XNAUseContentPipeline>true</XNAUseContentPipeline>
+      <Importer>TextureImporter</Importer>
+      <Processor>SpriteTextureProcessor</Processor>
+      <Name>OptionsScreen</Name>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Banner.X">
+      <XNAUseContentPipeline>true</XNAUseContentPipeline>
+      <Importer>XImporter</Importer>
+      <Processor>XnaGraphicEngineModelProcessor</Processor>
+      <Name>Banner</Name>
+    </Content>
+    <Content Include="Content\Banner2.X">
+      <XNAUseContentPipeline>true</XNAUseContentPipeline>
+      <Importer>XImporter</Importer>
+      <Processor>XnaGraphicEngineModelProcessor</Processor>
+      <Name>Banner2</Name>
+    </Content>
+    <Content Include="Content\Banner3.X">
+      <XNAUseContentPipeline>true</XNAUseContentPipeline>
+      <Importer>XImporter</Importer>
+      <Processor>XnaGraphicEngineModelProcessor</Processor>
+      <Name>Banner3</Name>
+    </Content>
+    <Content Include="Content\Banner4.X">
+      <XNAUseContentPipeline>true</XNAUseContentPipeline>
+      <Importer>XImporter</Importer>
+      <Processor>XnaGraphicEngineModelProcessor</Processor>
+      <Name>Banner4</Name>
+    </Content>
+    <Content Include="Content\Banner5.X">
+      <XNAUseContentPipeline>true</XNAUseContentPipeline>
+      <Importer>XImporter</Importer>
+      <Processor>XnaGraphicEngineModelProcessor</Processor>
+      <Name>Banner5</Name>
+    </Content>
+    <Content Include="Content\Banner6.X">
+      <XNAUseContentPipeline>true</XNAUseContentPipeline>
+      <Importer>XImporter</Importer>
+      <Processor>XnaGraphicEngineModelProcessor</Processor>
+      <Name>Banner6</Name>
+    </Content>
+    <Content Include="Content\Blockade.X">
+      <XNAUseContentPipeline>true</XNAUseContentPipeline>
+      <Importer>XImporter</Importer>
+      <Processor>XnaGraphicEngineModelProcessor</Processor>
+      <Name>Blockade</Name>
+    </Content>
+    <Content Include="Content\Blockade2.X">
+      <XNAUseContentPipeline>true</XNAUseContentPipeline>
+      <Importer>XImporter</Importer>
+      <Processor>XnaGraphicEngineModelProcessor</Processor>
+      <Name>Blockade2</Name>
+    </Content>
+    <Content Include="Content\Building.X">
+      <XNAUseContentPipeline>true</XNAUseContentPipeline>
+      <Importer>XImporter</Importer>
+      <Processor>XnaGraphicEngineModelProcessor</Processor>
+      <Name>Building</Name>
+    </Content>
+    <Content Include="Content\Building2.X">
+      <XNAUseContentPipeline>true</XNAUseContentPipeline>
+      <Importer>XImporter</Importer>
+      <Processor>XnaGraphicEngineModelProcessor</Processor>
+      <Name>Building2</Name>
+    </Content>
+    <Content Include="Content\Building3.X">
+      <XNAUseContentPipeline>true</XNAUseContentPipeline>
+      <Importer>XImporter</Importer>
+      <Processor>XnaGraphicEngineModelProcessor</Processor>
+      <Name>Building3</Name>
+    </Content>
+    <Content Include="Content\Building4.X">
+      <XNAUseContentPipeline>true</XNAUseContentPipeline>
+      <Importer>XImporter</Importer>
+      <Processor>XnaGraphicEngineModelProcessor</Processor>
+      <Name>Building4</Name>
+    </Content>
+    <Content Include="Content\Building5.X">
+      <XNAUseContentPipeline>true</XNAUseContentPipeline>
+      <Importer>XImporter</Importer>
+      <Processor>XnaGraphicEngineModelProcessor</Processor>
+      <Name>Building5</Name>
+    </Content>
+    <Content Include="Content\Circle.dds">
+      <XNAUseContentPipeline>true</XNAUseContentPipeline>
+      <Importer>TextureImporter</Importer>
+      <Processor>SpriteTextureProcessor</Processor>
+      <Name>Circle</Name>
+    </Content>
+    <Content Include="Content\Glow.dds">
+      <XNAUseContentPipeline>true</XNAUseContentPipeline>
+      <Importer>TextureImporter</Importer>
+      <Processor>SpriteTextureProcessor</Processor>
+      <Name>Glow</Name>
+    </Content>
+    <Content Include="Content\GuardRailHolder.X">
+      <XNAUseContentPipeline>true</XNAUseContentPipeline>
+      <Importer>XImporter</Importer>
+      <Processor>XnaGraphicEngineModelProcessor</Processor>
+      <Name>GuardRailHolder</Name>
+    </Content>
+    <Content Include="Content\Halo.dds">
+      <XNAUseContentPipeline>true</XNAUseContentPipeline>
+      <Importer>TextureImporter</Importer>
+      <Processor>SpriteTextureProcessor</Processor>
+      <Name>Halo</Name>
+    </Content>
+    <Content Include="Content\Hydrant.X">
+      <XNAUseContentPipeline>true</XNAUseContentPipeline>
+      <Importer>XImporter</Importer>
+      <Processor>XnaGraphicEngineModelProcessor</Processor>
+      <Name>Hydrant</Name>
+    </Content>
+    <Content Include="Content\Kaktus.X">
+      <XNAUseContentPipeline>true</XNAUseContentPipeline>
+      <Importer>XImporter</Importer>
+      <Processor>XnaGraphicEngineModelProcessor</Processor>
+      <Name>Kaktus</Name>
+    </Content>
+    <Content Include="Content\Kaktus2.X">
+      <XNAUseContentPipeline>true</XNAUseContentPipeline>
+      <Importer>XImporter</Importer>
+      <Processor>XnaGraphicEngineModelProcessor</Processor>
+      <Name>Kaktus2</Name>
+    </Content>
+    <Content Include="Content\KaktusBenny.X">
+      <XNAUseContentPipeline>true</XNAUseContentPipeline>
+      <Importer>XImporter</Importer>
+      <Processor>XnaGraphicEngineModelProcessor</Processor>
+      <Name>KaktusBenny</Name>
+    </Content>
+    <Content Include="Content\KaktusSeg.X">
+      <XNAUseContentPipeline>true</XNAUseContentPipeline>
+      <Importer>XImporter</Importer>
+      <Processor>XnaGraphicEngineModelProcessor</Processor>
+      <Name>KaktusSeg</Name>
+    </Content>
+    <Content Include="Content\Landscape.dds">
+      <XNAUseContentPipeline>true</XNAUseContentPipeline>
+      <Importer>TextureImporter</Importer>
+      <Processor>ModelTextureProcessor</Processor>
+      <Name>Landscape</Name>
+    </Content>
+    <Content Include="Content\LandscapeDetail.dds">
+      <XNAUseContentPipeline>true</XNAUseContentPipeline>
+      <Importer>TextureImporter</Importer>
+      <Processor>ModelTextureProcessor</Processor>
+      <Name>LandscapeDetail</Name>
+    </Content>
+    <Content Include="Content\LandscapeNormal.dds">
+      <XNAUseContentPipeline>true</XNAUseContentPipeline>
+      <Importer>TextureImporter</Importer>
+      <Processor>ModelTextureProcessor</Processor>
+      <Name>LandscapeNormal</Name>
+    </Content>
+    <Content Include="Content\LandscapeNormalMapping.fx">
+      <XNAUseContentPipeline>true</XNAUseContentPipeline>
+      <Importer>EffectImporter</Importer>
+      <Processor>EffectProcessor</Processor>
+      <Name>LandscapeNormalMapping</Name>
+    </Content>
+    <Content Include="Content\Laterne.X">
+      <XNAUseContentPipeline>true</XNAUseContentPipeline>
+      <Importer>XImporter</Importer>
+      <Processor>XnaGraphicEngineModelProcessor</Processor>
+      <Name>Laterne</Name>
+    </Content>
+    <Content Include="Content\Laterne2Sides.X">
+      <XNAUseContentPipeline>true</XNAUseContentPipeline>
+      <Importer>XImporter</Importer>
+      <Processor>XnaGraphicEngineModelProcessor</Processor>
+      <Name>Laterne2Sides</Name>
+    </Content>
+    <Content Include="Content\Lens.dds">
+      <XNAUseContentPipeline>true</XNAUseContentPipeline>
+      <Importer>TextureImporter</Importer>
+      <Processor>SpriteTextureProcessor</Processor>
+      <Name>Lens</Name>
+    </Content>
+    <Content Include="Content\LineRendering.fx">
+      <XNAUseContentPipeline>true</XNAUseContentPipeline>
+      <Importer>EffectImporter</Importer>
+      <Processor>EffectProcessor</Processor>
+      <Name>LineRendering</Name>
+    </Content>
+    <Content Include="Content\Noise128x128.dds">
+      <XNAUseContentPipeline>true</XNAUseContentPipeline>
+      <Importer>TextureImporter</Importer>
+      <Processor>SpriteTextureProcessor</Processor>
+      <Name>Noise128x128</Name>
+    </Content>
+    <Content Include="Content\NormalMapping.fx">
+      <XNAUseContentPipeline>true</XNAUseContentPipeline>
+      <Importer>EffectImporter</Importer>
+      <Processor>EffectProcessor</Processor>
+      <Name>NormalMapping</Name>
+    </Content>
+    <Content Include="Content\OilPump.X">
+      <XNAUseContentPipeline>true</XNAUseContentPipeline>
+      <Importer>XImporter</Importer>
+      <Processor>XnaGraphicEngineModelProcessor</Processor>
+      <Name>OilPump</Name>
+    </Content>
+    <Content Include="Content\OilTanks.X">
+      <XNAUseContentPipeline>true</XNAUseContentPipeline>
+      <Importer>XImporter</Importer>
+      <Processor>XnaGraphicEngineModelProcessor</Processor>
+      <Name>OilTanks</Name>
+    </Content>
+    <Content Include="Content\pokal1.dds">
+      <XNAUseContentPipeline>true</XNAUseContentPipeline>
+      <Importer>TextureImporter</Importer>
+      <Processor>ModelTextureProcessor</Processor>
+      <Name>pokal1</Name>
+    </Content>
+    <Content Include="Content\PostScreenGlow.fx">
+      <XNAUseContentPipeline>true</XNAUseContentPipeline>
+      <Importer>EffectImporter</Importer>
+      <Processor>EffectProcessor</Processor>
+      <Name>PostScreenGlow</Name>
+    </Content>
+    <Content Include="Content\PostScreenMenu.fx">
+      <XNAUseContentPipeline>true</XNAUseContentPipeline>
+      <Importer>EffectImporter</Importer>
+      <Processor>EffectProcessor</Processor>
+      <Name>PostScreenMenu</Name>
+    </Content>
+    <Content Include="Content\PostScreenShadowBlur.fx">
+      <XNAUseContentPipeline>true</XNAUseContentPipeline>
+      <Importer>EffectImporter</Importer>
+      <Processor>EffectProcessor</Processor>
+      <Name>PostScreenShadowBlur</Name>
+    </Content>
+    <Content Include="Content\PreScreenSkyCubeMapping.fx">
+      <XNAUseContentPipeline>true</XNAUseContentPipeline>
+      <Importer>EffectImporter</Importer>
+      <Processor>EffectProcessor</Processor>
+      <Name>PreScreenSkyCubeMapping</Name>
+    </Content>
+    <Content Include="Content\ReflectionSimpleGlass.fx">
+      <XNAUseContentPipeline>true</XNAUseContentPipeline>
+      <Importer>EffectImporter</Importer>
+      <Processor>EffectProcessor</Processor>
+      <Name>ReflectionSimpleGlass</Name>
+    </Content>
+    <Content Include="Content\Ring.dds">
+      <XNAUseContentPipeline>true</XNAUseContentPipeline>
+      <Importer>TextureImporter</Importer>
+      <Processor>SpriteTextureProcessor</Processor>
+      <Name>Ring</Name>
+    </Content>
+    <Content Include="Content\Road.dds">
+      <XNAUseContentPipeline>true</XNAUseContentPipeline>
+      <Importer>TextureImporter</Importer>
+      <Processor>ModelTextureProcessor</Processor>
+      <Name>Road</Name>
+    </Content>
+    <Content Include="Content\RoadBack.dds">
+      <XNAUseContentPipeline>true</XNAUseContentPipeline>
+      <Importer>TextureImporter</Importer>
+      <Processor>ModelTextureProcessor</Processor>
+      <Name>RoadBack</Name>
+    </Content>
+    <Content Include="Content\RoadBackNormal.dds">
+      <XNAUseContentPipeline>true</XNAUseContentPipeline>
+      <Importer>TextureImporter</Importer>
+      <Processor>ModelTextureProcessor</Processor>
+      <Name>RoadBackNormal</Name>
+    </Content>
+    <Content Include="Content\RoadCement.dds">
+      <XNAUseContentPipeline>true</XNAUseContentPipeline>
+      <Importer>TextureImporter</Importer>
+      <Processor>ModelTextureProcessor</Processor>
+      <Name>RoadCement</Name>
+    </Content>
+    <Content Include="Content\RoadCementNormal.dds">
+      <XNAUseContentPipeline>true</XNAUseContentPipeline>
+      <Importer>TextureImporter</Importer>
+      <Processor>ModelTextureProcessor</Processor>
+      <Name>RoadCementNormal</Name>
+    </Content>
+    <Content Include="Content\RoadNormal.dds">
+      <XNAUseContentPipeline>true</XNAUseContentPipeline>
+      <Importer>TextureImporter</Importer>
+      <Processor>ModelTextureProcessor</Processor>
+      <Name>RoadNormal</Name>
+    </Content>
+    <Content Include="Content\Roadsign.X">
+      <XNAUseContentPipeline>true</XNAUseContentPipeline>
+      <Importer>XImporter</Importer>
+      <Processor>XnaGraphicEngineModelProcessor</Processor>
+      <Name>Roadsign</Name>
+    </Content>
+    <Content Include="Content\Roadsign2.X">
+      <XNAUseContentPipeline>true</XNAUseContentPipeline>
+      <Importer>XImporter</Importer>
+      <Processor>XnaGraphicEngineModelProcessor</Processor>
+      <Name>Roadsign2</Name>
+    </Content>
+    <Content Include="Content\Ruin.X">
+      <XNAUseContentPipeline>true</XNAUseContentPipeline>
+      <Importer>XImporter</Importer>
+      <Processor>XnaGraphicEngineModelProcessor</Processor>
+      <Name>Ruin</Name>
+    </Content>
+    <Content Include="Content\RuinHouse.X">
+      <XNAUseContentPipeline>true</XNAUseContentPipeline>
+      <Importer>XImporter</Importer>
+      <Processor>XnaGraphicEngineModelProcessor</Processor>
+      <Name>RuinHouse</Name>
+    </Content>
+    <Content Include="Content\ShadowDistanceFadeoutMap.dds">
+      <XNAUseContentPipeline>true</XNAUseContentPipeline>
+      <Importer>TextureImporter</Importer>
+      <Processor>SpriteTextureProcessor</Processor>
+      <Name>ShadowDistanceFadeoutMap</Name>
+    </Content>
+    <Content Include="Content\ShadowMap.fx">
+      <XNAUseContentPipeline>true</XNAUseContentPipeline>
+      <Importer>EffectImporter</Importer>
+      <Processor>EffectProcessor</Processor>
+      <Name>ShadowMap</Name>
+    </Content>
+    <Content Include="Content\SharpRock.X">
+      <XNAUseContentPipeline>true</XNAUseContentPipeline>
+      <Importer>XImporter</Importer>
+      <Processor>XnaGraphicEngineModelProcessor</Processor>
+      <Name>SharpRock</Name>
+    </Content>
+    <Content Include="Content\SharpRock2.X">
+      <XNAUseContentPipeline>true</XNAUseContentPipeline>
+      <Importer>XImporter</Importer>
+      <Processor>XnaGraphicEngineModelProcessor</Processor>
+      <Name>SharpRock2</Name>
+    </Content>
+    <Content Include="Content\Sign.X">
+      <XNAUseContentPipeline>true</XNAUseContentPipeline>
+      <Importer>XImporter</Importer>
+      <Processor>XnaGraphicEngineModelProcessor</Processor>
+      <Name>Sign</Name>
+    </Content>
+    <Content Include="Content\Sign2.X">
+      <XNAUseContentPipeline>true</XNAUseContentPipeline>
+      <Importer>XImporter</Importer>
+      <Processor>XnaGraphicEngineModelProcessor</Processor>
+      <Name>Sign2</Name>
+    </Content>
+    <Content Include="Content\SignCurveLeft.X">
+      <XNAUseContentPipeline>true</XNAUseContentPipeline>
+      <Importer>XImporter</Importer>
+      <Processor>XnaGraphicEngineModelProcessor</Processor>
+      <Name>SignCurveLeft</Name>
+    </Content>
+    <Content Include="Content\SignCurveRight.X">
+      <XNAUseContentPipeline>true</XNAUseContentPipeline>
+      <Importer>XImporter</Importer>
+      <Processor>XnaGraphicEngineModelProcessor</Processor>
+      <Name>SignCurveRight</Name>
+    </Content>
+    <Content Include="Content\SignWarning.X">
+      <XNAUseContentPipeline>true</XNAUseContentPipeline>
+      <Importer>XImporter</Importer>
+      <Processor>XnaGraphicEngineModelProcessor</Processor>
+      <Name>SignWarning</Name>
+    </Content>
+    <Content Include="Content\SimpleShader.fx">
+      <XNAUseContentPipeline>true</XNAUseContentPipeline>
+      <Importer>EffectImporter</Importer>
+      <Processor>EffectProcessor</Processor>
+      <Name>SimpleShader</Name>
+    </Content>
+    <Content Include="Content\StartLight.X">
+      <XNAUseContentPipeline>true</XNAUseContentPipeline>
+      <Importer>XImporter</Importer>
+      <Processor>XnaGraphicEngineModelProcessor</Processor>
+      <Name>StartLight</Name>
+    </Content>
+    <Content Include="Content\Streaks.dds">
+      <XNAUseContentPipeline>true</XNAUseContentPipeline>
+      <Importer>TextureImporter</Importer>
+      <Processor>SpriteTextureProcessor</Processor>
+      <Name>Streaks</Name>
+    </Content>
+    <Content Include="Content\Sun.dds">
+      <XNAUseContentPipeline>true</XNAUseContentPipeline>
+      <Importer>TextureImporter</Importer>
+      <Processor>SpriteTextureProcessor</Processor>
+      <Name>Sun</Name>
+    </Content>
+    <Content Include="Content\track.dds">
+      <XNAUseContentPipeline>true</XNAUseContentPipeline>
+      <Importer>TextureImporter</Importer>
+      <Processor>ModelTextureProcessor</Processor>
+      <Name>track</Name>
+    </Content>
+    <Content Include="Content\Windmill.X">
+      <XNAUseContentPipeline>true</XNAUseContentPipeline>
+      <Importer>XImporter</Importer>
+      <Processor>XnaGraphicEngineModelProcessor</Processor>
+      <Name>Windmill</Name>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\LandscapeHeights.data">
+      <XNAUseContentPipeline>false</XNAUseContentPipeline>
+      <Name>LandscapeHeights</Name>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\logoonly_exdream.png">
+      <XNAUseContentPipeline>true</XNAUseContentPipeline>
+      <Importer>TextureImporter</Importer>
+      <Processor>SpriteTextureProcessor</Processor>
+      <Name>logoonly_exdream</Name>
+    </Content>
+    <Content Include="Content\logoonly_microsoft.png">
+      <XNAUseContentPipeline>true</XNAUseContentPipeline>
+      <Importer>TextureImporter</Importer>
+      <Processor>SpriteTextureProcessor</Processor>
+      <Name>logoonly_microsoft</Name>
+    </Content>
+    <Content Include="Content\logoonly_xna.png">
+      <XNAUseContentPipeline>true</XNAUseContentPipeline>
+      <Importer>TextureImporter</Importer>
+      <Processor>SpriteTextureProcessor</Processor>
+      <Name>logoonly_xna</Name>
+    </Content>
+    <Content Include="Content\ScreenBorderFadeout.dds">
+      <XNAUseContentPipeline>true</XNAUseContentPipeline>
+      <Importer>TextureImporter</Importer>
+      <Processor>SpriteTextureProcessor</Processor>
+      <Name>ScreenBorderFadeout</Name>
+    </Content>
+    <Content Include="Content\CityGround.dds">
+      <XNAUseContentPipeline>true</XNAUseContentPipeline>
+      <Importer>TextureImporter</Importer>
+      <Processor>ModelTextureProcessor</Processor>
+      <Name>CityGround</Name>
+    </Content>
+    <Content Include="Content\CityGroundNormal.dds">
+      <XNAUseContentPipeline>true</XNAUseContentPipeline>
+      <Importer>TextureImporter</Importer>
+      <Processor>ModelTextureProcessor</Processor>
+      <Name>CityGroundNormal</Name>
+    </Content>
+    <Content Include="Content\Leitplanke.dds">
+      <XNAUseContentPipeline>true</XNAUseContentPipeline>
+      <Importer>TextureImporter</Importer>
+      <Processor>ModelTextureProcessor</Processor>
+      <Name>Leitplanke</Name>
+    </Content>
+    <Content Include="Content\LeitplankeNormal.dds">
+      <XNAUseContentPipeline>true</XNAUseContentPipeline>
+      <Importer>TextureImporter</Importer>
+      <Processor>ModelTextureProcessor</Processor>
+      <Name>LeitplankeNormal</Name>
+    </Content>
+    <Content Include="SpeedyRacer.ico">
+      <XNAUseContentPipeline>false</XNAUseContentPipeline>
+      <Name>SpeedyRacer</Name>
+    </Content>
+    <Content Include="Sounds\RacingGame.xap">
+      <XNAUseContentPipeline>true</XNAUseContentPipeline>
+      <Importer>XactImporter</Importer>
+      <Processor>XactProcessor</Processor>
+      <Name>RacingGame</Name>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\TrackSimple.Track">
+      <XNAUseContentPipeline>false</XNAUseContentPipeline>
+      <Name>TrackSimple</Name>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\SpeedyRacer.X">
+      <XNAUseContentPipeline>true</XNAUseContentPipeline>
+      <Importer>XImporter</Importer>
+      <Processor>XnaGraphicEngineModelProcessor</Processor>
+      <Name>SpeedyRacer</Name>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\AlphaDeadTree.X">
+      <XNAUseContentPipeline>true</XNAUseContentPipeline>
+      <Importer>XImporter</Importer>
+      <Processor>XnaGraphicEngineModelProcessor</Processor>
+      <Name>AlphaDeadTree</Name>
+    </Content>
+    <Content Include="License.txt">
+      <XNAUseContentPipeline>false</XNAUseContentPipeline>
+      <Name>License</Name>
+    </Content>
+    <Content Include="Readme.txt">
+      <XNAUseContentPipeline>false</XNAUseContentPipeline>
+      <Name>Readme</Name>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA\Game Studio Express\v1.0\Microsoft.Xna.ContentPipeline.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA\Game Studio Express\v1.0\Microsoft.Xna.Common.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
